@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Hello, world!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Passero+One" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Rancho&effect=3d-float|3d">
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+    <style>
+        div,
+        #div1 {
+            padding: 0px;
+            margin-left: 0px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid" style="height:1000vh;top:0px;">
+
+        <img src="assets/pic1.jpg" id="div1" class="sticky-top" style="height:100vh;position:fixed;left:0;">
+
+    </div>
+
+    <script>
+        $(document).ready(function() {
+
+            $(window).scroll(function() {
+                var doch = $(document).height() - $(window).height();
+                var docw = $("#div1").width() - $(window).width();
+                var winh = $(window).width();
+                var scrolled = $(window).scrollTop();
+
+                $("#div1").css({
+                    left: -1 * docw * scrolled / doch
+                });
+
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
